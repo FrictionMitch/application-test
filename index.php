@@ -8,6 +8,9 @@
 
 	<!--Bootstrap-->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!--Fontawesome-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -19,7 +22,7 @@
 	   array('id'=>3, 'first_name'=>'James', 'last_name'=>'Johnston', 'email'=>'james.johnston@gmail.com'),
 	   array('id'=>4, 'first_name'=>'Steve', 'last_name'=>'Buscemi', 'email'=>'steve.buscemi@yahoo.com'),
 	   array('id'=>5, 'first_name'=>'Doug', 'last_name'=>'Simons', 'email'=>'doug.simons@hotmail.com'),
-	   array('id'=>6, 'first_name'=>'Angus', 'last_name'=>'Young', 'email'=>'angus.young@acdc.com')
+	   array('id'=>6, 'first_name'=>'Mike', 'last_name'=>'Brisson', 'email'=>'mike@codecadaver.com')
 	);
         
         
@@ -28,9 +31,9 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>People Table</h1>
-			<h3>A Simple Employee Table</h3>
+			<h3>A Simple Employee Table <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
 		</div>
-		<table class="table table-striped table-bordered">
+		<table class="table table-condensed table-striped table-bordered">
 			<thead>
 				<th>ID</th>
 				<th>First Name</th>
@@ -39,22 +42,22 @@
 				<th>Contact</th>
 			</thead>
 			<tbody>
-				<php?
+				<?php
     
 		  		$keys = array_keys($people);
 				for($i = 0; $i < count($people); $i++) {
 					echo "<tr>";
 		    			foreach($people[$keys[$i]] as $key => $value) {
-		        			echo "<td>".$value ."</td>";
-		      				$firstName = $people[$i]['first_name'];
-		      				$lastName = $people[$i]['last_name'];
-                				$email = $people[$i]['email'];
-		    			}
+		        		  echo "<td>".$value ."</td>";
+		      			  $firstName = $people[$i]['first_name'];
+		      			  $lastName = $people[$i]['last_name'];
+                			  $email = $people[$i]['email'];
+		    		}
                     
-		    			echo "<td><button class='btn btn-info' onclick='alert(\"$firstName $lastName: $email\")'>Contact</button></td>";
-		    			echo "</tr>";
-				}
-				?>
+		    echo "<td><button class='btn btn-info' onclick='alert(\"$firstName $lastName: $email\")'>Contact</button></td>";
+		    echo "</tr>";
+		}
+		?>
 			</tbody>
 		</table>
 	</div>
