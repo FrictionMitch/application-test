@@ -18,7 +18,8 @@
 	   array('id'=>2, 'first_name'=>'Paul', 'last_name'=>'Allen', 'email'=>'paul.allen@microsoft.com'),
 	   array('id'=>3, 'first_name'=>'James', 'last_name'=>'Johnston', 'email'=>'james.johnston@gmail.com'),
 	   array('id'=>4, 'first_name'=>'Steve', 'last_name'=>'Buscemi', 'email'=>'steve.buscemi@yahoo.com'),
-	   array('id'=>5, 'first_name'=>'Doug', 'last_name'=>'Simons', 'email'=>'doug.simons@hotmail.com')
+	   array('id'=>5, 'first_name'=>'Doug', 'last_name'=>'Simons', 'email'=>'doug.simons@hotmail.com'),
+	   array('id'=>6, 'first_name'=>'Angus', 'last_name'=>'Young', 'email'=>'angus.young@acdc.com')
 	);
         
         
@@ -27,7 +28,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>People Table</h1>
-			<h3>A simple table created by your next employee :)</h3>
+			<h3>A Simple Employee Table</h3>
 		</div>
 		<table class="table table-striped table-bordered">
 			<thead>
@@ -38,22 +39,22 @@
 				<th>Contact</th>
 			</thead>
 			<tbody>
-				<?
+				<php?
     
-		  $keys = array_keys($people);
-		for($i = 0; $i < count($people); $i++) {
-			echo "<tr>";
-		    foreach($people[$keys[$i]] as $key => $value) {
-		        echo "<td>".$value ."</td>";
-		      	$firstName = $people[$i]['first_name'];
-		      	$lastName = $people[$i]['last_name'];
-                $email = $people[$i]['email'];
-		    }
+		  		$keys = array_keys($people);
+				for($i = 0; $i < count($people); $i++) {
+					echo "<tr>";
+		    			foreach($people[$keys[$i]] as $key => $value) {
+		        			echo "<td>".$value ."</td>";
+		      				$firstName = $people[$i]['first_name'];
+		      				$lastName = $people[$i]['last_name'];
+                				$email = $people[$i]['email'];
+		    			}
                     
-		    echo "<td><button class='btn btn-info' onclick='alert(\"$firstName $lastName: $email\")'>Contact</button></td>";
-		    echo "</tr>";
-		}
-		?>
+		    			echo "<td><button class='btn btn-info' onclick='alert(\"$firstName $lastName: $email\")'>Contact</button></td>";
+		    			echo "</tr>";
+				}
+				?>
 			</tbody>
 		</table>
 	</div>
